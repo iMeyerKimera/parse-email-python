@@ -16,7 +16,7 @@ the addresses, we'll utilize the email.utils.getaddresses() function, which spli
 addresses in a list of tuple (display-name, address). This needs to be decoded as well
 and the addresses must match the RFC2822 syntax. The getmailaddresses() does all the work.
 
-Note for Amanada!
+Note for Amanda!
 Please note that this code will only parse the email headers.
 I will be done with the complete code by tonight.
 
