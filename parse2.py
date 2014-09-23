@@ -3,6 +3,12 @@ import email, mimetypes
 from email.utils import parseaddr
 from email.header import decode_header
 
+invalid_chards_in_filename = '<>:"/\\|?*\%\'' + \
+                             reduce(lambda x, y: x + chr(y), range(32), '')
+invalid_windows_name=\
+    'CON PRN AUX NUL COM1 COM2 COM3 COM4 COM5 ' \
+    'COM6 COM7 COM8 COM9 LPT1 LPT2 LPT3 LPT4 LPT5 LPT6 LPT7 LPT8 LPT9'.split()
+
 # email address REGEX matching the RFC 2822 spec ..
 # my $atom       = qr{[a-zA-Z0-9_!#\$\%&'*+/=?\^`{}~|\-]+};
 # my $dot_atom   = qr{$atom(?:\.$atom)*};
@@ -25,6 +31,26 @@ domain = "(?:" + dot_atom + "|" + domain_lit + ")"
 addr_spec = local + "\@" + domain
 
 email_address_re = re.compile('^' + addr_spec + '$')
+
+class Attachment:
+    def __init__(self, part, filename=None, type=None, payload=None, charset=None,
+                 content_id=None, description=None, disposition=None,
+                 sanitized_filename=None, is_body=None):
+        self.part = part  # original python part
+        self.filename = filename  # file name in unicode if any
+        self.type = type  # the mime-type
+        self.payload = payload  # the MIME decoded content
+        self.charset = charset  # the charset if any
+        self.description = description  # if any
+        self.disposition = disposition  # 'inline', 'attachment', or None
+        self.sanitized_filename = sanitized_filename  # cleanup your filename here (TODO)
+        self.is_body=is_body   # usually in (None, 'text/plain' or 'text/html')
+        self.content_id=content_id  # if any
+        if self.content_id:
+            # strip '<>' to ease search and replace in "root" content (TODO)
+            if self.content_id.startswith('<') and self.content_id.endswith('>'):
+                self.content_id = self.content_id[1:-1]
+
 
 raw = """Delivered-To: aremik82@gmail.com
 Received: by 10.114.29.131 with SMTP id k3csp469759ldh;
