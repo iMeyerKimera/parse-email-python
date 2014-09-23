@@ -3,7 +3,7 @@ from email.utils import parseaddr
 from email.header import decode_header
 import re
 
-# email address REGEX matching the RFC 2822 spec
+# email address REGEX matching the RFC 2822 spec **
 # my $atom       = qr{[a-zA-Z0-9_!#\$\%&'*+/=?\^`{}~|\-]+};
 # my $dot_atom   = qr{$atom(?:\.$atom)*};
 # my $quoted     = qr{"(?:\\[^\r\n]|[^\\"])*"};
