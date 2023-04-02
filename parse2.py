@@ -248,7 +248,7 @@ def decode_text(payload, charset, default_charset):
     return payload, None
 
 if __name__ == "__main__":
-    raw_version = """Delivered-To: aremik82@gmail.com
+    raw_version = """Delivered-To: example@example.com
 Received: by 10.114.29.131 with SMTP id k3csp469759ldh;
         Fri, 19 Sep 2014 22:32:31 -0700 (PDT)
 Return-Path: <3bhEdVAwJCKsVSLY-LNLOPXjRXLTW.NZXLcPXTVtnRXLTW.NZX@7SJ3MYH53AKEO4JRJXH7WZWH.apphosting.bounces.google.com>
@@ -275,7 +275,7 @@ Message-ID: <047d7b15ac0f374f4f0503788bb5@google.com>
 Date: Sat, 20 Sep 2014 05:32:30 +0000
 Subject: Your weekly progress summary on Khan Academy
 From: Khan Academy <no-reply@khanacademy.org>
-To: aremik82@gmail.com
+To: example@example.com
 Content-Type: multipart/alternative; boundary=047d7b15ac0f374f220503788bb2
 
 --047d7b15ac0f374f220503788bb2
@@ -807,10 +807,10 @@ Helvetica, Arial, Geneva, sans-serif;">
 <p style=3D"font-family: 'Helvetica Neue', Calibri, Helvetica, Arial, sans-=
 serif; font-weight: normal; font-size: 10px; color: #666;">
    =20
-    This message was sent to <a href=3D"mailto:aremik82@gmail.com" target=
+    This message was sent to <a href=3D"mailto:example@example.com" target=
 =3D"_blank" style=3D"font-family: 'Helvetica Neue', Calibri, Helvetica, Ari=
 al, sans-serif; font-size: 10px; font-weight: normal; color: #678d00; text-=
-decoration: none;">aremik82@gmail.com</a>.
+decoration: none;">example@example.com</a>.
     You may <a href=3D"https://www.khanacademy.org/settings/email?t1c=3Dag5=
 zfmtoYW4tYWNhZGVteXJtCxIVVXNlckVtYWlsU3Vic2NyaXB0aW9uIlJlbWFpbF9zdWI6d2Vla2=
 x5X3N1bW1hcnk6aWQ6aHR0cDovL2dvb2dsZWlkLmtoYW5hY2FkZW15Lm9yZy8xMDA4MjY4ODA4M=
