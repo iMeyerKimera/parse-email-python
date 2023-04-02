@@ -26,7 +26,7 @@ addr_spec = local + "\@" + domain
 
 email_address_re = re.compile('^' + addr_spec + '$')
 
-raw = """Delivered-To: aremik82@gmail.com
+raw = """Delivered-To: example@example.com
 Received: by 10.114.29.131 with SMTP id k3csp469759ldh;
         Fri, 19 Sep 2014 22:32:31 -0700 (PDT)
 Return-Path: <3bhEdVAwJCKsVSLY-LNLOPXjRXLTW.NZXLcPXTVtnRXLTW.NZX@7SJ3MYH53AKEO4JRJXH7WZWH.apphosting.bounces.google.com>
@@ -53,7 +53,7 @@ Message-ID: <047d7b15ac0f374f4f0503788bb5@google.com>
 Date: Sat, 20 Sep 2014 05:32:30 +0000
 Subject: Your weekly progress summary on Khan Academy
 From: Khan Academy <no-reply@khanacademy.org>
-To: aremik82@gmail.com
+To: example@example.com
 Content-Type: multipart/alternative; boundary=047d7b15ac0f374f220503788bb2
 
 --047d7b15ac0f374f220503788bb2
